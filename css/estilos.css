@@ -1,0 +1,129 @@
+.mt-9{
+    margin-top: 90px;
+}
+.p-cols{
+    columns: 4;
+}
+.nav-link{
+    color: #fff;
+    font-size: 1.2rem;
+    border-radius: 7px;
+}
+.nav-link:hover{
+    color: #fff;
+    font-size: 1.2rem;
+    background-color: rgb(90, 6, 6);
+}
+.btn-azul-escuro{
+    background-color: #01023d !important;
+    border-color: #01023d !important;
+    color: white !important;
+}
+.btn-azul-escuro:hover {
+    background-color: #020366 !important;
+    border-color: #020366 !important;
+    color: white !important;
+}
+.btn-roxo{
+    background-color: #260452 !important;
+    border-color: #260452 !important;
+    color: white !important;
+}
+.btn-roxo:hover,
+.btn-roxo:focus,
+.btn-roxo:active {
+    background-color: #3e038b !important;
+    border-color: #3e038b !important;
+    color: white !important;
+}
+.btn-ciano{
+    background-color: #004363 !important;
+    border-color: #004363 !important;
+    color: white !important;
+}
+.btn-ciano:hover,
+.btn-ciano:focus,
+.btn-ciano:active {
+    background-color: #026492 !important;
+    border-color: #026492 !important;
+    color: white !important;
+}
+.btn-verde{
+    background-color: #005c14 !important;
+    border-color: #005c14 !important;
+    color: white !important;
+}
+.btn-verde:hover,
+.btn-verde:focus,
+.btn-verde:active {
+    background-color: #00911f !important;
+    border-color: #00911f !important;
+    color: white !important;
+}
+
+/* =========================
+   TELA CLICK TO ENTER
+========================= */
+
+#tela-entrada {
+    position: fixed;
+    inset: 0;
+    background: #000;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 9999;
+    cursor: pointer;
+
+    transition: opacity 0.8s ease;
+}
+
+.entrada-conteudo {
+    text-align: center;
+}
+
+.entrada-conteudo h1 {
+    font-size: 32px;
+    letter-spacing: 5px;
+    margin: 0;
+}
+
+.entrada-conteudo p {
+    color: #aaa;
+    margin-top: 15px;
+}
+
+#controle-musica {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 10px 14px;
+
+    background: rgba(0, 0, 0, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    border-radius: 12px;
+
+    z-index: 1000;
+}
+
+#botao-musica {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#volume {
+    width: 100px;
+    cursor: pointer;
+}

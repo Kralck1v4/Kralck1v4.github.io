@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/estilos.css">
+    <title>KralckDEMON</title>
+</head>
+<body>
+    <!-- Tela inicial -->
+    <div id="tela-entrada">
+        <div class="entrada-conteudo">
+            <h1>CLICK TO ENTER</h1>
+            <p>🎵 Clique para entrar</p>
+        </div>
+    </div>
+
+    <!-- Música -->
+    <audio id="musica" loop>
+      <source src="audio/YTDown.com_YouTube_Media_QSMQhXAQlgk_009_128k.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Controle da música -->
+    <div id="controle-musica">
+        <button id="botao-musica" onclick="alternarMusica()">⏸️</button>
+
+        <input
+         type="range"
+          id="volume"
+          min="0"
+           max="1"
+           step="0.01"
+           value="0.5"
+        >
+    </div>
+    <header class="container-fluid bg-black py-5 text-center">
+        <h1 class="text-white">KralckDEMON</h1>
+        <p class="text-secondary">Minhas redes socias abaixo:
+        </p>
+    </header>
+    <div id="conteudo" class="container bg-light py-5">
+        <h2>Conheça mais sobre mim:</h2>
+        <p class="">
+            Me chamo Paulo Henrique. Atualmente tenho 18 anos, faço faculdade de Ciência da computação. Esse site é um projeto meu que eu estou tentando melhorar aos poucos...
+        </p>
+
+        <div class="row">
+            <div class="col border border-primary-subtle p-3 m-2 rounded-4 d-flex flex-column">
+                <img src="img/twitch-transparent-logo-images-8.webp" alt="SE FODA CEGO" width="100%" height="100px" class="rounded-4">
+                <h3>Twitch</h3>
+                <p>Live quase toda semana (só quando eu quero fazer mesmo kkkk). </p>
+                <a href="https://www.twitch.tv/kralckdemon"><button class="nav-link active btn btn-roxo mt-5">Twitch</button></a>
+            </div>
+            <div class="col border border-primary-subtle p-3 m-2 rounded-4 d-flex flex-column">
+                <img src="img/free-kick-icon-svg-download-png-14603982.webp" alt="" width="100%" height="100px">
+                <h4>Kick</h4>
+                <p>Atualmente não faço live no kick mais, mas ta ai o link caso queira seguir lá.</p>
+                <a href="https://kick.com/kralckdemon"><button class="nav-link active btn btn-verde mt-5">Kick</button></a>
+            </div>
+            <div class="col border border-primary-subtle p-3 m-2 rounded-4">
+                <img src="img/steam-1.webp" alt="" width="100%" height="100px">
+                <h5>Steam</h5>
+                <p>Meu link para a minha conta da steam.</p>
+                <a href="https://steamcommunity.com/id/KralckDEMON/"><button class="nav-link active btn-azul-escuro mt-9 ">Steam</button></a>
+            </div>
+            <div class="col border border-primary-subtle p-3 m-2 rounded-4 d-flex flex-column">
+                <img src="img/discord-logo-discord-icon-transparent-free-png.webp" alt="" width="100%" height="100px">
+                <h6>Discord</h6>
+                <p>Esse é o link para o server aonde eu e meu parceiro divulgamos a nossa live/videos.</p>
+                <a href="https://discord.gg/Dnj73AxM7Z"><button class="nav-link active btn-ciano mt-5">Discord</button></a>
+            </div>
+        </div>
+
+    </div>
+    <footer>
+        <p class="conteiner-fluid bg-black py-3 mt-5 text-center text-secondary">KralckDEMON</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+    <script>
+        const musica = document.getElementById("musica");
+        const telaEntrada = document.getElementById("tela-entrada");
+        const botaoMusica = document.getElementById("botao-musica");
+        const volume = document.getElementById("volume");
+
+        // Volume inicial
+        musica.volume = 0.5;
+
+        // Clique no CLICK TO ENTER
+        telaEntrada.addEventListener("click", function () {
+
+            // Começa a música
+            musica.play();
+
+            // Esconde a tela
+            telaEntrada.style.opacity = "0";
+            telaEntrada.style.pointerEvents = "none";
+
+            // Remove a tela depois da animação
+            setTimeout(function () {
+                telaEntrada.remove();
+            }, 800);
+        });
+
+        // Play / Pause
+        function alternarMusica() {
+
+            if (musica.paused) {
+                musica.play();
+                botaoMusica.textContent = "⏸️";
+            } else {
+                musica.pause();
+                botaoMusica.textContent = "▶️";
+            }
+        }
+
+        // Controle de volume
+        volume.addEventListener("input", function () {
+            musica.volume = volume.value;
+        });
+    </script>
+</body>
+</html>
